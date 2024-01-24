@@ -1,1 +1,1 @@
-# envoy-extproc-body-rewrite
+# envoy-extproc-demo-go
