@@ -14,7 +14,7 @@ type bodyCheckRequestProcessor struct {
 }
 
 func (s *bodyCheckRequestProcessor) GetName() string {
-	return "big-body"
+	return "body-check"
 }
 
 func (s *bodyCheckRequestProcessor) GetOptions() *ep.ProcessingOptions {

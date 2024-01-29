@@ -17,9 +17,21 @@ The Envoy ExtProc filter allows you to offload request processing logic to an ex
 
 To get started with the demo application, follow these steps:
 
-  1. Clone the repository: git clone https://github.com/projectsesame/envoy-extproc-demo-go.git
-  2. Build the Go application: go build
-  3. Run the application: ./envoy-extproc-demo-go
+  1. Clone the repository:
+     ```
+     git clone https://github.com/projectsesame/envoy-extproc-demo-go.git
+     ```
+
+  2. Build the Go application:
+     ```
+     go build .
+     ```
+
+  3. Run the application:
+     ```
+     ./envoy-extproc-demo-go body-check --log-stream --log-phases body-size 32
+     ```
+
 
 ## Usage
 
@@ -34,6 +46,7 @@ This project is licensed under the Apache License Version 2.0. See the LICENSE f
 Acknowledgements
 
 This demo application is based on the ExtProc filter demo(s) provided by [envoy-extproc-sdk-go](https://github.com/wrossmorrow/envoy-extproc-sdk-go). please visit it for more demos.
+
 Special thanks to the community for their contributions and support.
 
 ## Contact
