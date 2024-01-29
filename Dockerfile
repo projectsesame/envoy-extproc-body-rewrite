@@ -1,4 +1,4 @@
-FROM docker.m.daocloud.io/golang:1.21.6-bullseye
+FROM golang:1.21.6-bullseye
 
 SHELL ["/bin/bash", "-c"]
 
@@ -9,15 +9,13 @@ RUN apt-get update && apt-get -y upgrade \
 
 WORKDIR /build
 
-ENV GO111MODULE=on \
-    GOPROXY=https://goproxy.cn,direct
 COPY . .
 RUN go mod tidy \
     && go mod download \
     && go build -o /extproc
 
 
-FROM docker.m.daocloud.io/busybox
+FROM busybox
 
 COPY --from=0 /extproc /bin/extproc
 RUN chmod +x /bin/extproc
