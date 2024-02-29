@@ -1,6 +1,6 @@
-# envoy-extproc-demo-go
+# envoy-extproc-payloadlimit-demo-go
 
-This repository contains a demo applicationw written in Go that demonstrates the usage of Envoy's External Processor (ExtProc) filter to do `body size check` for POST request.
+This repository contains a demo applicationw written in Go that demonstrates the usage of Envoy's External Processor (ExtProc) filter to do `payload limit` for POST request.
 
 ## Overview
 
@@ -19,7 +19,7 @@ To get started with the demo application, follow these steps:
 
   1. Clone the repository:
      ```
-     git clone https://github.com/projectsesame/envoy-extproc-demo-go.git
+     git clone https://github.com/projectsesame/envoy-extproc-payloadlimit-demo-go.git
      ```
 
   2. Build the Go application:
@@ -29,7 +29,7 @@ To get started with the demo application, follow these steps:
 
   3. Run the application:
      ```
-     ./envoy-extproc-demo-go body-check --log-stream --log-phases body-size 32
+     ./envoy-extproc-payloadlimit-demo-go payload-limit --log-stream --log-phases payload-limit 32
      ```
 
 

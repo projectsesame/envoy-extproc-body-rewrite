@@ -20,9 +20,9 @@ FROM busybox
 COPY --from=0 /extproc /bin/extproc
 RUN chmod +x /bin/extproc
 
-ARG EXAMPLE=body-check
+ARG EXAMPLE=payload-limit
 
 EXPOSE 50051
 
 ENTRYPOINT [ "/bin/extproc" ]
-CMD [ "body-check", "--log-stream", "--log-phases", "body-size", "32"  ]
+CMD [ "payload-limit", "--log-stream", "--log-phases", "payload-limit", "32"  ]
