@@ -23,11 +23,11 @@ func (s *payloadLimitRequestProcessor) GetOptions() *ep.ProcessingOptions {
 
 const kContentLen = "content-length"
 
-func (s *payloadLimitRequestProcessor) ProcessRequestHeaders(ctx *ep.RequestContext, headers map[string][]string, rawValues map[string][]byte) error {
+func (s *payloadLimitRequestProcessor) ProcessRequestHeaders(ctx *ep.RequestContext, headers ep.AllHeaders) error {
 	cancel := func(code int32) error {
-		return ctx.CancelRequest(code, map[string]string{}, typev3.StatusCode_name[code])
+		return ctx.CancelRequest(code, map[string]ep.HeaderValue{}, typev3.StatusCode_name[code])
 	}
-	raw, ok := rawValues[kContentLen]
+	raw, ok := headers.RawHeaders[kContentLen]
 	if !ok {
 		return cancel(413)
 	}
@@ -45,11 +45,11 @@ func (s *payloadLimitRequestProcessor) ProcessRequestBody(ctx *ep.RequestContext
 	return ctx.ContinueRequest()
 }
 
-func (s *payloadLimitRequestProcessor) ProcessRequestTrailers(ctx *ep.RequestContext, trailers map[string][]string, rawValues map[string][]byte) error {
+func (s *payloadLimitRequestProcessor) ProcessRequestTrailers(ctx *ep.RequestContext, trailers ep.AllHeaders) error {
 	return ctx.ContinueRequest()
 }
 
-func (s *payloadLimitRequestProcessor) ProcessResponseHeaders(ctx *ep.RequestContext, headers map[string][]string, rawValues map[string][]byte) error {
+func (s *payloadLimitRequestProcessor) ProcessResponseHeaders(ctx *ep.RequestContext, headers ep.AllHeaders) error {
 	return ctx.ContinueRequest()
 }
 
@@ -57,7 +57,7 @@ func (s *payloadLimitRequestProcessor) ProcessResponseBody(ctx *ep.RequestContex
 	return ctx.ContinueRequest()
 }
 
-func (s *payloadLimitRequestProcessor) ProcessResponseTrailers(ctx *ep.RequestContext, trailers map[string][]string, rawValues map[string][]byte) error {
+func (s *payloadLimitRequestProcessor) ProcessResponseTrailers(ctx *ep.RequestContext, trailers ep.AllHeaders) error {
 	return ctx.ContinueRequest()
 }
 
