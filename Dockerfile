@@ -20,7 +20,7 @@ FROM busybox
 COPY --from=0 /extproc /bin/extproc
 RUN chmod +x /bin/extproc
 
-ARG EXAMPLE=payload-limit
+ARG EXAMPLE=body-rewrite
 
 EXPOSE 50051
 
