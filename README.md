@@ -1,6 +1,6 @@
-# envoy-extproc-payloadlimit-demo-go
+# envoy-extproc-body-rewrite
 
-This repository contains a demo application written in Go that demonstrates the usage of Envoy's External Processor (ExtProc) filter to do `payload limit` for POST request.
+This repository contains a demo application written in Go that demonstrates the usage of Envoy's External Processor (ExtProc) filter to do `body rewrite` for POST request.
 
 ## Overview
 
