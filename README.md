@@ -19,7 +19,7 @@ To get started with the demo application, follow these steps:
 
   1. Clone the repository:
      ```
-     git clone https://github.com/projectsesame/envoy-extproc-payloadlimit-demo-go.git
+     git clone https://github.com/projectsesame/envoy-extproc-body-rewrite.git
      ```
 
   2. Build the Go application:
@@ -29,7 +29,7 @@ To get started with the demo application, follow these steps:
 
   3. Run the application:
      ```
-     ./envoy-extproc-payloadlimit-demo-go payload-limit --log-stream --log-phases payload-limit 32
+     ./envoy-extproc-bodyRewrite-demo-go body-rewrite --log-stream --log-phases
      ```
 
 
