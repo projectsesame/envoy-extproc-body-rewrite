@@ -25,4 +25,4 @@ ARG EXAMPLE=payload-limit
 EXPOSE 50051
 
 ENTRYPOINT [ "/bin/extproc" ]
-CMD [ "payload-limit", "--log-stream", "--log-phases", "payload-limit", "32"  ]
+CMD [ "body-rewrite", "--log-stream", "--log-phases"]
