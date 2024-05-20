@@ -19,7 +19,7 @@ spec:
       containers:
         - name: body-rewrite-container
           image: >-
-            release.daocloud.io/skoala/envoy-extproc-body-rewrite:5dcd9b080a1afa67e19d29428d8d13a274aa061f
+            release.daocloud.io/skoala/envoy-extproc-body-rewrite:331998d232a0d311d1a0b63a702c4fae717e75d5
           ports:
             - containerPort: 50051
               protocol: TCP
