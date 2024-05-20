@@ -16,7 +16,7 @@ type processor interface {
 }
 
 var processors = map[string]processor{
-	"payload-limit": &payloadLimitRequestProcessor{},
+	"body-rewrite": &bodyRewriteRequestProcessor{},
 }
 
 func parseArgs(args []string) (port *int, opts *ep.ProcessingOptions, nonFlagArgs []string) {
